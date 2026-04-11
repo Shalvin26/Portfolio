@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>shalvin · about</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>shalvin · about</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-page {
+      position: relative;
+      min-height: 100vh;
+      background-image: url('dino2.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      display: flex;
+    }
+
+    .about-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      z-index: 1;
+    }
+
+    .about-content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      padding: 5rem 4rem 6rem 4rem;
+      max-width: calc(100% - 320px);
+    }
+
+    .about-photo-strip {
+      position: relative;
+      z-index: 2;
+      width: 320px;
+      flex-shrink: 0;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .about-photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(100%) contrast(1.4) brightness(0.75);
+      opacity: 0.85;
+    }
+
+    .about-photo-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 30%);
+      z-index: 1;
+    }
+
+    .about__tag {
+      color: #c9a96e;
+      letter-spacing: 0.5em;
+      font-size: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .about__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      color: #e8e8e8;
+    }
+
+    .about__bio {
+      font-size: 0.85rem;
+      color: #aaaaaa;
+      line-height: 1.9;
+      margin-bottom: 3rem;
+      border-left: 1px solid #1e1e1e;
+      padding-left: 2rem;
+    }
+
+    .about__label {
+      font-size: 0.65rem;
+      color: #c9a96e;
+      letter-spacing: 0.4em;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .about__skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .skill-group {
+      border-left: 1px solid #1e1e1e;
+      padding-left: 1.5rem;
+    }
+
+    .skill-group__name {
+      font-size: 0.65rem;
+      color: #555555;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.6rem;
+    }
+
+    .skill-group__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-tag {
+      font-size: 0.7rem;
+      color: #c9a96e;
+      border: 1px solid #2a2318;
+      padding: 0.2rem 0.6rem;
+      letter-spacing: 0.05em;
+    }
+
+    .about__divider {
+      border: none;
+      border-top: 1px solid #1e1e1e;
+      margin: 2.5rem 0;
+    }
+
+    .about__edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.8rem;
+      margin-bottom: 0.3rem;
+      color: #e8e8e8;
+    }
+
+    .about__grade {
+      color: #c9a96e;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+    }
+
+    .about__edu-sub {
+      font-size: 0.7rem;
+      color: #555555;
+      letter-spacing: 0.1em;
+      margin-bottom: 2rem;
+    }
+
+    .about__copy {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      font-size: 0.7rem;
+      color: #555555;
+      letter-spacing: 0.2em;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <nav class="navaboutpage">
+    <a href="index.html">:home:</a>
+    <a href="index.html#projects">:projects:</a>
+    <a href="index.html">:about:</a>
+  </nav>
+
+  <div class="about-page">
+
+    <div class="about-content">
+      <p class="about__tag">: : : about</p>
+      <h1 class="about__title">mechanical mind,<br>software soul.</h1>
+
+      <div class="about__bio">
+        B.Tech Mechanical Engineering student at NIT Hamirpur (CGPA 8.62) with a strong pull toward software. I build full-stack web applications, think in systems, and care about writing code that actually works — not just code that runs.
+      </div>
+
+      <span class="about__label">: skills :</span>
+      <div class="about__skills">
+        <div class="skill-group">
+          <div class="skill-group__name">languages</div>
+          <div class="skill-group__tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group__name">web</div>
+          <div class="skill-group__tags">
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">React</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group__name">backend & db</div>
+          <div class="skill-group__tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">JWT</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group__name">core</div>
+          <div class="skill-group__tags">
+            <span class="skill-tag">DSA</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="about__divider">
+
+      <span class="about__label">: education :</span>
+      <div class="about__edu-row">
+        <span>NIT Hamirpur</span>
+        <span class="about__grade">8.62 / 10</span>
+      </div>
+      <div class="about__edu-sub">B.Tech · Mechanical Engineering</div>
+    </div>
+
+    <div class="about-photo-strip">
+      <img src="shalvin_about.jpg" alt="" />
+    </div>
+
+  </div>
+
+  <p class="about__copy">© 2026 · shalvin · : : :</p>
+
+</body>
+</html>
+
+</body>
+</html>

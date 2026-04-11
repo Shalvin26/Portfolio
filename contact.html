@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>shalvin · contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-page {
+      min-height: 100vh;
+      background: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 90% 60%, rgba(201,169,110,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .contact-hero::after {
+      content: ': : :';
+      position: absolute;
+      right: 4rem;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      color: #1e1e1e;
+      white-space: nowrap;
+    }
+
+    .c-tag {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.5em;
+      color: #c9a96e;
+      margin-bottom: 1.5rem;
+    }
+
+    .c-rule {
+      border: none;
+      border-top: 1px solid #1e1e1e;
+      margin: 0 0 2.5rem 0;
+      width: 100%;
+    }
+
+    .contact-title-giant {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(4rem, 13vw, 10rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: #e8e8e8;
+      margin: 0;
+    }
+
+    .contact-title-accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(4rem, 13vw, 10rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: #c9a96e;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .contact-sub {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.8rem);
+      color: #333;
+      margin-bottom: 4rem;
+      font-weight: 400;
+    }
+
+    .contact-email-row {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-email-label {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      color: #333;
+    }
+
+    .contact-email-link {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+      color: #c9a96e;
+      text-decoration: none;
+      border-bottom: 1px solid #2a2318;
+      padding-bottom: 3px;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    .contact-email-link:hover {
+      border-color: #c9a96e;
+      color: #e8c97a;
+    }
+
+    .socials-section {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .social-item {
+      padding: 2rem 3rem 2rem 0;
+      border-right: 1px solid #1a1a1a;
+      margin-right: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .social-item:last-child {
+      border-right: none;
+    }
+
+    .social-num {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.55rem;
+      color: #222;
+      letter-spacing: 0.2em;
+    }
+
+    .social-platform {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: #444;
+      margin-bottom: 0.3rem;
+    }
+
+    .social-handle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+      color: #e8e8e8;
+      text-decoration: none;
+      line-height: 1;
+      transition: color 0.3s ease;
+    }
+
+    .social-handle:hover {
+      color: #c9a96e;
+    }
+
+    .social-cta {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.65rem;
+      color: #c9a96e;
+      letter-spacing: 0.15em;
+      margin-top: 0.4rem;
+    }
+
+    .contact-footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contact-footer-copy {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.65rem;
+      color: #2a2a2a;
+      letter-spacing: 0.2em;
+    }
+
+    .contact-back {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.7rem;
+      color: #c9a96e;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: letter-spacing 0.3s ease;
+    }
+
+    .contact-back:hover {
+      letter-spacing: 0.3em;
+    }
+
+    @media (max-width: 640px) {
+      .contact-hero { padding: 5rem 2rem 3rem 2rem; }
+      .contact-footer { padding: 1.5rem 2rem; }
+      .contact-hero::after { display: none; }
+      .social-item { padding: 1.5rem 2rem 1.5rem 0; margin-right: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <nav class="nav">
+    <a href="index.html">:home:</a>
+    <a href="index.html#projects">:projects:</a>
+    <a href="about.html">:about:</a>
+  </nav>
+
+  <div class="contact-page">
+    <div class="contact-hero">
+
+      <p class="c-tag">: : : contact</p>
+      <hr class="c-rule">
+
+      <h1 class="contact-title-giant">get in</h1>
+      <h1 class="contact-title-accent">touch.</h1>
+      <p class="contact-sub">open to work, collabs, or just a good conversation.</p>
+
+      <div class="contact-email-row">
+        <span class="contact-email-label">: mail :</span>
+        <a href="mailto:shalvin.2617@gmail.com" class="contact-email-link">shalvin.2617@gmail.com ↗</a>
+      </div>
+
+      <div class="socials-section">
+        <div class="social-item">
+          <span class="social-num">01</span>
+          <span class="social-platform">: instagram :</span>
+          <a href="https://www.instagram.com/shalvinn_26_" class="social-handle" target="_blank">@shalvinn_26_
+</a>
+          <span class="social-cta">→ follow</span>
+        </div>
+        <div class="social-item">
+          <span class="social-num">02</span>
+          <span class="social-platform">: linkedin :</span>
+          <a href="https://www.linkedin.com/in/shalvin-sankhyan-354337268/" class="social-handle" target="_blank">Shalvin Sankhyan</a>
+          <span class="social-cta">→ connect</span>
+        </div>
+        <div class="social-item">
+          <span class="social-num">03</span>
+          <span class="social-platform">: twitter :</span>
+          <a href="https://x.com/chinki1234561?s=21" class="social-handle" target="_blank">Shalvin26</a>
+          <span class="social-cta">→ follow</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="contact-footer">
+      <span class="contact-footer-copy">© 2026 · shalvin · : : :</span>
+      <a href="index.html" class="contact-back">← back home</a>
+    </div>
+  </div>
+
+</body>
+</html>

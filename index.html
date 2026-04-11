@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>your.site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ 
+  
+  <div class="grain"></div>
+    <nav class="nav">
+    <a href="index.html">:home:</a>
+    <a href="index.html#projects">:projects:</a>
+    <a href="#about">:about:</a>
+  </nav>
+  <section class="hero">
+ 
+    <svg id="cosmos-svg" class="cosmos" viewBox="0 0 900 600"
+      xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="harshGlow" x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="6" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="distort">
+          <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" seed="5" result="turb">
+            <animate attributeName="baseFrequency" values="0.02;0.04;0.02" dur="8s" repeatCount="indefinite"/>
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="turb" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <clipPath id="cosmosClip"><rect width="900" height="600"/></clipPath>
+      </defs>
+    
+      <g id="cosmos-main" clip-path="url(#cosmosClip)">
+        <ellipse cx="450" cy="300" rx="200" ry="60" fill="none" stroke="rgba(201,169,110,0.23)" stroke-width="1" transform="rotate(-15 450 300)"/>
+        <ellipse cx="450" cy="300" rx="300" ry="90" fill="none" stroke="rgba(255,255,255,0.17)" stroke-width="1" transform="rotate(-15 450 300)"/>
+        <ellipse cx="450" cy="300" rx="380" ry="115" fill="none" stroke="rgba(201,169,110,0.10)" stroke-width="1" transform="rotate(-15 450 300)"/>
+        <g transform="translate(450,300)" filter="url(#distort)" opacity="0.12">
+          <circle cx="0" cy="0" r="150" fill="none" stroke="#c9a96e" stroke-width="1.5"/>
+        </g>
+        <g transform="translate(450,300) rotate(-15)">
+          <g>
+            <circle cx="200" cy="0" r="3" fill="rgba(201,169,110,1)" filter="url(#glow)">
+              <animate attributeName="opacity" values="0.9;0.4;0.9" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="12s" repeatCount="indefinite"/>
+          </g>
+          <g>
+            <circle cx="-200" cy="0" r="2" fill="rgba(255,255,255,1)>
+              <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite"/>
+            </circle>
+            <animateTransform attributeName="transform" type="rotate" from="180" to="540" dur="12s" repeatCount="indefinite"/>
+          </g>
+        </g>
+        <g transform="translate(110,120)">
+          <polygon points="0,-28 6.5,-9 26,-9 11,3.5 17,22 0,11 -17,22 -11,3.5 -26,-9 -6.5,-9" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="22s" repeatCount="indefinite"/>
+          </polygon>
+        </g>
+        <g transform="translate(780,90)">
+          <polygon points="0,-22 5,-5 22,0 5,5 0,22 -5,5 -22,0 -5,-5" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.8">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="16s" repeatCount="indefinite"/>
+          </polygon>
+        </g>
+        <g transform="translate(820,480)">
+          <polygon points="0,-20 5.8,-10 11.5,0 5.8,10 0,20 -5.8,10 -11.5,0 -5.8,-10" fill="none" stroke="rgba(201,169,110,0.2)" stroke-width="1">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="30s" repeatCount="indefinite"/>
+          </polygon>
+        </g>
+        <polygon points="450,80 520,240 700,240 560,340 610,500 450,400 290,500 340,340 200,240 380,240" fill="none" stroke="rgba(201,169,110,0.04)" stroke-width="1.5">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="120s" repeatCount="indefinite" additive="sum" origin="450 300"/>
+        </polygon>
+        <g transform="translate(60,260)">
+          <polygon points="0,-15 13,8 -13,8" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.8">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="25s" repeatCount="indefinite"/>
+          </polygon>
+          <animateTransform attributeName="transform" type="translate" values="60,260; 70,248; 60,260" dur="11s" repeatCount="indefinite" additive="sum"/>
+        </g>
+        <circle cx="450" cy="300" r="80" fill="none" stroke="rgba(201,169,110,0.05)" stroke-width="1">
+          <animate attributeName="r" values="80;92;80" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="450" cy="300" r="4" fill="rgba(201,169,110,0.2)" filter="url(#harshGlow)">
+          <animate attributeName="opacity" values="0.2;0.6;0.2" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </svg>
+    
+
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__tag">: : :</p>
+      <h1 class="hero__title">:shalvin:</h1>
+      <p class="hero__sub">tech · mech · create</p>
+      <a href="contact.html" class="hero__contact-btn">: get in touch^^</a>
+    </div>
+  </section>
+
+
+
+
+
+
+  <main class="posts" id="projects">
+     <article class="post">
+    <span class="post__date">mar 11, 2026</span>
+    <h2 class="post__title">smart academic attendance & scheduling</h2>
+    <p class="post__excerpt">a custom semester schedule generation engine that auto-generates 60+ lecture dates from 3 inputs. built with react, node.js, express, mongodb atlas, jwt auth, and real-time shortage prediction...</p>
+    <div class="post__links">
+      <a href="https://smart-attendance-frontend-rho.vercel.app" class="post__link" target="_blank">live site →</a>
+      <a href="https://github.com/Shalvin26/smart-attendance-frontend" class="post__link" target="_blank">frontend →</a>
+      <a href="https://github.com/Shalvin26/smart-attendance-backend" class="post__link" target="_blank">backend →</a>
+    </div>
+  </article>
+
+  <article class="post">
+    <span class="post__date">ongoing</span>
+    <h2 class="post__title">sneaker e-commerce web application</h2>
+    <p class="post__excerpt">full-stack sneaker store with separate admin and user panels. jwt authentication, role-based access control, multer image uploads, restful apis, and mongodb persistent storage. deployed on render...</p>
+    <div class="post__links">
+      <a href="https://sneaker-store-2.onrender.com" class="post__link" target="_blank">live site →</a>
+      <a href="https://github.com/Shalvin26/sneaker-store" class="post__link" target="_blank">github →</a>
+    </div>
+  </article>
+  </main>
+
+
+<footer class="footer">
+  <div class="footer__inner">
+    <!-- your about content here -->
+  </div>
+  <section class="about" id="about">
+  <p class="about__tag">: : : about</p>
+  <h2 class="about__title">mechanical mind,<br>software soul.</h2>
+  <div class="about__bio">
+    B.Tech Mechanical Engineering student at NIT Hamirpur (CGPA 8.62) with a strong pull toward software. I build full-stack web applications, think in systems, and care about writing code that actually works — not just code that runs.
+  </div>
+  <a href="about.html" class="post__link">know more →</a>
+
+  </section>
+
+<p class="footer__copy">© 2026 · shalvin · : : :</p>
+</footer>
+
+  <script src="script.js"></script>
+  <script src="cosmos.js"></script>
+</body>
+</html>
