@@ -7,15 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>shalvin · about</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
   <style>
     .about-page {
       position: relative;
@@ -24,7 +15,6 @@
       background-size: cover;
       background-position: center top;
       background-attachment: fixed;
-      display: flex;
     }
 
     .about-page::before {
@@ -38,38 +28,98 @@
     .about-content {
       position: relative;
       z-index: 2;
-      flex: 1;
       padding: 5rem 4rem 6rem 4rem;
-      max-width: calc(100% - 320px);
+      max-width: 780px;
     }
 
-    .about-photo-strip {
+    /* ── Floating Photo Card ── */
+    .about-photo-card {
+      position: fixed;
+      top: 50%;
+      right: 4rem;
+      transform: translateY(-50%);
+      z-index: 10;
+      width: 220px;
+    }
+
+    .about-photo-card__inner {
       position: relative;
-      z-index: 2;
-      width: 320px;
-      flex-shrink: 0;
-      min-height: 100vh;
+      border: 1px solid #2a2318;
+      box-shadow:
+        0 0 0 1px #1a1a1a,
+        8px 8px 0px #0a0a0a,
+        0 20px 60px rgba(0, 0, 0, 0.8);
       overflow: hidden;
     }
 
-    .about-photo-strip img {
+    /* Decorative corner marks */
+    .about-photo-card__inner::before,
+    .about-photo-card__inner::after {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      z-index: 3;
+    }
+    .about-photo-card__inner::before {
+      top: 6px;
+      left: 6px;
+      border-top: 1px solid #c9a96e;
+      border-left: 1px solid #c9a96e;
+    }
+    .about-photo-card__inner::after {
+      bottom: 6px;
+      right: 6px;
+      border-bottom: 1px solid #c9a96e;
+      border-right: 1px solid #c9a96e;
+    }
+
+    .about-photo-card img {
       width: 100%;
-      height: 100%;
+      height: 280px;
       object-fit: cover;
       object-position: center top;
       display: block;
-      filter: grayscale(100%) contrast(1.4) brightness(0.75);
-      opacity: 0.85;
+      filter: grayscale(100%) contrast(1.3) brightness(0.8);
     }
 
-    .about-photo-strip::before {
-      content: '';
+    /* Subtle gradient overlay on image */
+    .about-photo-card__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, transparent 30%);
+      background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
       z-index: 1;
     }
 
+    .about-photo-card__label {
+      background: #0d0d0d;
+      border-top: 1px solid #1e1e1e;
+      padding: 0.6rem 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .about-photo-card__name {
+      font-family: 'Fragment Mono', monospace;
+      font-size: 0.6rem;
+      color: #c9a96e;
+      letter-spacing: 0.15em;
+    }
+
+    .about-photo-card__dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c9a96e;
+      opacity: 0.6;
+    }
+
+    /* ── Existing styles ── */
     .about__tag {
       color: #c9a96e;
       letter-spacing: 0.5em;
@@ -174,16 +224,17 @@
       letter-spacing: 0.2em;
       z-index: 10;
     }
-    @media (max-width: 768px) {
-  .about-photo-strip {
-    display: none;
-  }
 
-  .about-content {
-    max-width: 100%;
-    padding: 4rem 1.5rem 4rem 1.5rem;
-  }
-}
+    @media (max-width: 768px) {
+      .about-photo-card {
+        display: none;
+      }
+
+      .about-content {
+        max-width: 100%;
+        padding: 4rem 1.5rem 4rem 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -203,7 +254,7 @@
       <h1 class="about__title">mechanical mind,<br>software soul.</h1>
 
       <div class="about__bio">
-        B.Tech Mechanical Engineering student at NIT Hamirpur (CGPA 8.62) with a strong pull toward software. I build full-stack web applications, think in systems, and care about writing code that actually works — not just code that runs.
+        I am Shalvin Sankhyan, a B.Tech Mechanical Engineering student at NIT Hamirpur (CGPA 8.62) with a strong pull toward software. I build full-stack web applications, think in systems, and care about writing code that actually works — not just code that runs.
       </div>
 
       <span class="about__label">: skills :</span>
@@ -252,16 +303,21 @@
       <div class="about__edu-sub">B.Tech · Mechanical Engineering</div>
     </div>
 
-    <div class="about-photo-strip">
-      <img src="shalvin_about.jpg" alt="" />
+    <!-- Floating Photo Card -->
+    <div class="about-photo-card">
+      <div class="about-photo-card__inner">
+        <img src="floatcard.jpg" alt="Shalvin Sankhyan" />
+        <div class="about-photo-card__overlay"></div>
+      </div>
+      <div class="about-photo-card__label">
+        <span class="about-photo-card__name">Shalvin Sankhyan</span>
+        <span class="about-photo-card__dot"></span>
+      </div>
     </div>
 
   </div>
 
   <p class="about__copy">© 2026 · shalvin · : : :</p>
-
-</body>
-</html>
 
 </body>
 </html>
